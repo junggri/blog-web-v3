@@ -1,0 +1,50 @@
+@import "../styles/variables";
+
+.landing {
+  @include container;
+  height: 100vh;
+
+  .landingSlogan {
+    margin-top: 70px;
+
+    .main {
+      color: $mainColor;
+    }
+
+    .slogan {
+      word-break: break-all;
+      margin-top: 15px;
+      color: $mainFontColor;
+    }
+  }
+
+  .linkBox {
+    margin-top: 65px;
+
+    .title {
+      background: $mainColor;
+      display: inline-block;
+      padding: 3px 6px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .links {
+
+      .link {
+        padding: 10px 0;
+        transition: 0.4s all;
+
+        .detail {
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $mainColor
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.TextInput {
+  position: relative;
+
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    outline-style: none;
+    border-radius: inherit;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: 0.3s all;
+
+    &:focus {
+      border-bottom: 1px solid $mainColor;
+
+    }
+  }
+}

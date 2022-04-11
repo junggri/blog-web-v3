@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  .logo {
+    cursor: pointer;
+  }
+
+  .subHeader {
+    display: flex;
+
+    div {
+      margin-left: 15px;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.2s all;
+
+      &:hover {
+        border-bottom: 1px solid $mainColor;
+      }
+    }
+  }
+}

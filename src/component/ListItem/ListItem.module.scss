@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.ListItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 30px;
+  padding-bottom: 20px;
+
+  .content {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+
+    span {
+      line-height: 1.5;
+      word-break: break-all;
+    }
+  }
+
+  .date {
+    display: flex;
+    justify-content: flex-end;
+    color: $mainFontColor;
+    margin-top: 15px;
+  }
+
+  .footer {
+    //margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+}

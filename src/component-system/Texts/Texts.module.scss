@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+.Text {
+  display: flex;
+  align-items: center;
+  justify-items: center;;
+
+  span {
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    line-height: 1.1;
+  }
+
+}
+
+.ko {
+  .L {
+    font-family: SD Light;
+  }
+
+  .M {
+    font-family: SD M;
+  }
+
+  .B {
+    font-family: SD B
+  }
+
+  .NeoB {
+    font-family: SD NeoBold;
+  }
+
+  .Bolder {
+    font-family: SD Bolder;
+  }
+
+}
+
+.en {
+
+  .L {
+  }
+
+  .M {
+    font-weight: 500;
+  }
+
+  .B {
+  }
+
+  .NeoB {
+    font-weight: bold;
+  }
+
+  .Bolder {
+  }
+
+}
