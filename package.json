@@ -21,7 +21,7 @@
     "formik": "^2.2.9",
     "graphql": "^16.3.0",
     "immer": "^9.0.12",
-    "junggri-dayjs": "^0.1.4",
+    "junggri-dayjs": "^0.1.9",
     "lodash": "^4.17.21",
     "next": "12.1.4",
     "react": "18.0.0",

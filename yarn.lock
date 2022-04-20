@@ -1493,10 +1493,10 @@ json5@^1.0.1:
     array-includes "^3.1.4"
     object.assign "^4.1.2"
 
-junggri-dayjs@^0.1.4:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/junggri-dayjs/-/junggri-dayjs-0.1.7.tgz#76c0c4768971e2cc3e1f9a5fba56313773db4f60"
-  integrity sha512-ackgBcTDqN6GCfw+Tamvl5Ds9ocx4UxqTXa75ITuhymaqw3jbMNGH1Yo5qhKaV2E7XKOzfmAG1+5hx04u09LHA==
+junggri-dayjs@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/junggri-dayjs/-/junggri-dayjs-0.1.9.tgz#35aefbf5686ead3a9c1a65037968b803bb99f3ac"
+  integrity sha512-b18vdrivygxyFrkjGUF3Bfw2f2leqsAuHrLrDpZ0pRo/+8A8tApKZ+gp5wRXmEezX46apPwx+O7DC2kZ98MB6w==
 
 just-curry-it@^3.1.0:
   version "3.2.1"

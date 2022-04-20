@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {HitActions} from "~/reducer/hit";
 import {RootState} from "~/reducer";
-
+import jsDay from "junggri-dayjs";
 
 const Home: NextPage = () => {
   const geoLocation = process.env.NODE_ENV === "production" ? useGeoLocation() : null;
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     dispatch(HitActions.GET_HIT())
   }, [])
 
-  console.log(123123, state.data)
+
   return (
     <div className={styles.landing}>
       <Header/>
@@ -53,6 +53,13 @@ const Home: NextPage = () => {
               <span className={styles.detail}>저의 일기장이에요.</span>
             </Texts>
           </a>
+        </div>
+      </div>
+      <div className={styles.carrier}>
+        <Texts className={styles.title} size={20} type={"B"}>이렇게 성장하고 있습니다</Texts>
+        <div className={styles.company}>
+          <span className={styles.name}>위에이알</span>
+          <span>2021.06.01 ~ 2022.04.08</span>
         </div>
       </div>
     </div>
