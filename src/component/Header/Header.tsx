@@ -19,22 +19,22 @@ const Header: FC<Props> = memo(() => {
       <div className={styles.subHeader}>
         <Link href={"/post"}>
           <a>
-            <Texts type={"L"} size={15} language={"en"}>POST</Texts>
+            <Texts type={"L"} size={17} language={"en"}>POST</Texts>
           </a>
         </Link>
         <Link href={"/log"}>
           <a>
-            <Texts type={"L"} size={15} language={"en"}>LOG</Texts>
+            <Texts type={"L"} size={17} language={"en"}>LOG</Texts>
           </a>
         </Link>
         <Link href={"/message"}>
           <a>
-            <Texts type={"L"} size={15} language={"en"}>MSG</Texts>
+            <Texts type={"L"} size={17} language={"en"}>MSG</Texts>
           </a>
         </Link>
         <Link href={"/youtube"}>
           <a>
-            <Texts type={"L"} size={15} language={"en"}>YOUTUBE</Texts>
+            <Texts type={"L"} size={17} language={"en"}>YOUTUBE</Texts>
           </a>
         </Link>
       </div>

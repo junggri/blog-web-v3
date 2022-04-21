@@ -10,6 +10,7 @@
     justify-items: center;
     align-content: center;
     line-height: 1.1;
+
   }
 
 }
@@ -38,6 +39,9 @@
 }
 
 .en {
+  span {
+    font-family: "lucida console", lucida-console-w01, monospace !important;
+  }
 
   .L {
   }
