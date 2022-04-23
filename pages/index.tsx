@@ -7,7 +7,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {HitActions} from "~/reducer/hit";
 import {RootState} from "~/reducer";
-import jsDay from "junggri-dayjs";
 
 const Home: NextPage = () => {
   const geoLocation = process.env.NODE_ENV === "production" ? useGeoLocation() : null;
