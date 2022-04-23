@@ -30,6 +30,7 @@ export const GET_PAGINATED_POST = `
       }
       leftCount
       pageInfo {
+        type
         endCursor
         hasNextPage
       }

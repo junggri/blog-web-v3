@@ -5,29 +5,37 @@ import {GET_PAGINATED_POST} from "~/core/query";
 import {handleActions} from "redux-actions";
 import reducerMap from "~/core/reducerMap";
 import produce from "immer";
+import {act} from "react-dom/test-utils";
 
 const postType = "@data/post"
 
 export interface PostInitialState {
-  data: null | PaginatedPost
+  data: {
+    post: null | PaginatedPost,
+    log: null | PaginatedPost
+  }
   loading: boolean,
   error: boolean
 }
 
 export const PostAction = {
-  GET_PAGINATED_POST: createAsyncAction(postType, (first, after, filter) => {
+  GET_PAGINATED_POST: createAsyncAction(postType, (first, after, filter, type) => {
     return fetcher.fetch().query(GET_PAGINATED_POST, {
       data: {
         first: first,
         after: after,
-        filter: filter
+        filter: filter,
+        type: type
       }
     })
-  })
+  }),
 }
 
 const initialValue: PostInitialState = {
-  data: null,
+  data: {
+    post: null,
+    log: null
+  },
   loading: false,
   error: false
 }
@@ -36,15 +44,20 @@ const reducer = handleActions<PostInitialState, { data: { getPaginationPost: Pag
   ...reducerMap(postType, {
     onRequest: (state, action) => {
       return produce(state, draft => {
-        draft.data = null
+        draft.data = {
+          post: null,
+          log: null
+        }
         draft.error = false
         draft.loading = true
       })
     },
     onSuccess: (state, action) => {
       return produce(state, draft => {
-        console.log(action.payload)
-        draft.data = action.payload.data.getPaginationPost
+        const type: string = action.payload.data.getPaginationPost.pageInfo.type
+        if (type === "post" || type === "log") {
+          draft.data[type] = action.payload.data.getPaginationPost
+        }
         draft.error = false
         draft.loading = false
       })

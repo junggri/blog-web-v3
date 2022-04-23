@@ -10,12 +10,12 @@ const ListUserInteractionBox: FC<Props> = memo(() => {
   return (
     <div className={styles.userInteraction}>
       <div>
-        <Texts language={"en"} type={"L"} size={14} className={styles.item}>
+        <Texts language={"en"} type={"L"} size={12} className={styles.item}>
           likes
         </Texts>
       </div>
       <div>
-        <Texts language={"en"} type={"L"} size={14} className={styles.item}>
+        <Texts language={"en"} type={"L"} size={12} className={styles.item}>
           dislikes
         </Texts>
       </div>

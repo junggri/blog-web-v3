@@ -1,25 +1,25 @@
-import React, {memo} from 'react'
+import React, {FC, memo} from 'react'
 import styles from "./LogItem.module.scss"
 import Texts from "~/component-system/Texts/Texts";
-import jsDay from "junggri-dayjs";
+import {Post} from "~/core/schema";
+import parseDate from "~/lib/parseDate";
 
 interface Props {
-
+  data: Post
 }
 
-const LogItem = memo(() => {
-  const now = jsDay.getKoreanTime();
+const LogItem: FC<Props> = memo(({data}) => {
+
   return (
     <div className={styles.logItem}>
       <Texts size={22} type={"NeoB"} className={styles.title}>
-        테스트
+        {data.title}
       </Texts>
       <Texts className={styles.content}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda at beatae, culpa delectus, nisi odit quibusdam rem, sed totam velit vero voluptates? Atque dolor minus mollitia
-        tempore. Laudantium, repellat.
+        {data.content}
       </Texts>
       <Texts className={styles.date} size={12}>
-        {now}
+        {parseDate(new Date(data.createdAt))}
       </Texts>
     </div>
   )

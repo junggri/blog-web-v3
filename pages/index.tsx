@@ -12,6 +12,7 @@ const Home: NextPage = () => {
   const geoLocation = process.env.NODE_ENV === "production" ? useGeoLocation() : null;
   const dispatch = useDispatch()
   const state = useSelector((state: RootState) => state.hit);
+  
 
   useEffect(() => {
     dispatch(HitActions.GET_HIT())

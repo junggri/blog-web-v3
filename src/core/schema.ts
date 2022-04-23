@@ -114,19 +114,21 @@ export type PageInfo = {
   __typename?: 'PageInfo';
   endCursor?: Maybe<Scalars['Float']>;
   hasNextPage?: Maybe<Scalars['Boolean']>;
+  type: Scalars['String'];
 };
 
 export type PaginatedPost = {
   __typename?: 'PaginatedPost';
   edges: Array<PageEdge>;
   leftCount?: Maybe<Scalars['Float']>;
-  pageInfo?: Maybe<PageInfo>;
+  pageInfo: PageInfo;
 };
 
 export type PaginationInput = {
   after?: InputMaybe<Scalars['Float']>;
   filter?: InputMaybe<Scalars['String']>;
   first: Scalars['Float'];
+  type?: InputMaybe<Scalars['String']>;
 };
 
 export type Post = {
@@ -137,7 +139,7 @@ export type Post = {
   id: Scalars['Int'];
   isPublished: Scalars['Boolean'];
   open: Scalars['Boolean'];
-  thumbnail: Scalars['String'];
+  thumbnail?: Maybe<Scalars['String']>;
   title: Scalars['String'];
   type: Scalars['String'];
   updatedAt?: Maybe<Scalars['DateTime']>;
@@ -157,7 +159,7 @@ export type PostInput = {
 export type Query = {
   __typename?: 'Query';
   getMessage: Array<Message>;
-  getPaginationPost?: Maybe<Array<PaginatedPost>>;
+  getPaginationPost: PaginatedPost;
   getPost: Post;
   getS3Image: Scalars['String'];
   getVideos: Youtube;

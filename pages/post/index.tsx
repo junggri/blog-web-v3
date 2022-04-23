@@ -14,19 +14,21 @@ const Post: FC<Props> = memo(() => {
   const state = useSelector((state: RootState) => state.post);
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(PostAction.GET_PAGINATED_POST(12, 0, "open"))
-  }, [])
-
 
   const renderList = useMemo(() => {
-    return new Array(10).fill(0).map((e, i) => {
-      return (
-        <ListItem key={i}/>
-      )
-    })
-  }, [])
+    if (!state.data.post) {
+      return []
+    }
 
+    return state.data.post.edges.map((e) => {
+      return <ListItem data={e.node} key={e.node.id}/>
+    })
+
+  }, [state.data])
+
+  useEffect(() => {
+    dispatch(PostAction.GET_PAGINATED_POST(12, 0, "open", "post"))
+  }, [])
 
   return (
     <div className={styles.Post}>
