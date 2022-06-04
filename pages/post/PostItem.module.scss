@@ -1,0 +1,93 @@
+@import "../../src/styles/variables";
+
+.PostItem {
+  @include container;
+
+  .postBody {
+    margin-top: 40px;
+
+
+    h1 {
+      font-size: 40px;
+      word-break: break-all;
+      color: $mainFontColor;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 20px;
+      word-break: break-all;
+      color: $mainFontColor;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      text-align: right;
+      font-size: 12px;
+      color: rgba(0, 0, 0, .6);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 10px;
+    }
+
+    .content {
+      color: $mainFontColor;
+      line-height: 1.4;
+      font-size: 18px;
+      margin-top: 60px;
+      word-break: break-all;
+    }
+  }
+
+  .buttons {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .text {
+    cursor: pointer;
+    margin-right: 15px;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s all;
+
+    &:hover {
+      border-bottom: 1px solid $mainColor;
+    }
+  }
+
+  .comment {
+    margin-top: 40px;
+    font-size: 0;
+
+    div {
+      color: $mainFontColor;
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+      height: 80px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      outline-style: none;
+      padding: 10px;
+      transition: 0.2s all;
+
+      &:hover {
+        border: 1px solid $mainColor;
+      }
+    }
+
+    .buttonBox {
+      border: 1px solid red;
+      margin-top: 20px;
+
+    }
+  }
+
+}

@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react'
+import React, {FC, memo, useState} from 'react'
 import Texts from '~/component-system/Texts/Texts'
 import styles from "./Header.module.scss"
 import Link from "next/link";
@@ -7,6 +7,7 @@ interface Props {
 }
 
 const Header: FC<Props> = memo(() => {
+  const [fontSize, setFontSize] = useState<number>(14)
   return (
     <header className={styles.Header}>
       <div className={styles.logo}>
@@ -17,24 +18,24 @@ const Header: FC<Props> = memo(() => {
         </Link>
       </div>
       <div className={styles.subHeader}>
-        <Link href={"/post"}>
+        <Link href={"/canvas"}>
           <a>
-            <Texts type={"L"} size={17} language={"en"}>POST</Texts>
+            <Texts type={"L"} size={fontSize} language={"en"}>CANVAS</Texts>
           </a>
         </Link>
         <Link href={"/log"}>
           <a>
-            <Texts type={"L"} size={17} language={"en"}>LOG</Texts>
-          </a>
-        </Link>
-        <Link href={"/message"}>
-          <a>
-            <Texts type={"L"} size={17} language={"en"}>MSG</Texts>
+            <Texts type={"L"} size={fontSize} language={"en"}>LOG</Texts>
           </a>
         </Link>
         <Link href={"/youtube"}>
           <a>
-            <Texts type={"L"} size={17} language={"en"}>YOUTUBE</Texts>
+            <Texts type={"L"} size={fontSize} language={"en"}>YOUTUBE</Texts>
+          </a>
+        </Link>
+        <Link href={"/message"}>
+          <a>
+            <Texts type={"L"} size={fontSize} language={"en"}>MSG</Texts>
           </a>
         </Link>
       </div>

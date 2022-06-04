@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.link {
+  padding: 10px 0;
+  transition: 0.4s all;
+  color: $mainFontColor;
+
+  .detail {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $mainColor
+  }
+
+  span {
+    @media(max-width: $mainWidth) {
+      font-size: 20px !important;
+    }
+  }
+}
+

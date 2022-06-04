@@ -6,5 +6,14 @@
   .logContainer {
     margin-top: 20px;
     padding-bottom: 100px;
+
+    .not {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 20px;
+      font-weight: bolder;
+      color: $mainFontColor;
+    }
   }
+
 }

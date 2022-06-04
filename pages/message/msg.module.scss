@@ -1,5 +1,16 @@
 @import "../../src/styles/variables";
 
+@keyframes animation {
+  0% {
+    transform: scale(0)
+
+  }
+  100% {
+    transform: scale(1)
+  }
+
+}
+
 .msg {
   @include container;
 
@@ -13,6 +24,25 @@
 
   .userInputBox {
     margin-top: 40px;
+
+    .result {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 19;
+      font-size: 10rem;
+      transform: translate(-50%, -50%);;
+
+
+      span {
+        display: flex;
+      }
+
+      .ani {
+        animation: animation 0.5s ease-in-out forwards;
+      }
+    }
+
 
     .inputBox {
       height: 50px;
@@ -49,6 +79,17 @@
       outline-style: none;
       border: 1px solid white;
       border-radius: 4px;
+    }
+  }
+
+  .response {
+    margin-top: 30px;
+    font-size: 2rem;;
+
+    .text {
+      span {
+        font-size: 40px !important;
+      }
     }
   }
 }

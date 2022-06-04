@@ -9,12 +9,22 @@
 
     .main {
       color: $mainColor;
+
+      span {
+        @media(max-width: $mainWidth) {
+          font-size: 20px !important
+        }
+      }
     }
 
     .slogan {
       word-break: break-all;
       margin-top: 15px;
       color: $mainFontColor;
+
+      span {
+        line-height: 1.4;
+      }
     }
   }
 
@@ -32,10 +42,10 @@
 
 
     .links {
-
       .link {
         padding: 10px 0;
         transition: 0.4s all;
+        color: $mainFontColor;
 
         .detail {
           display: inline-block;
@@ -46,12 +56,32 @@
           cursor: pointer;
           color: $mainColor
         }
+
+        span {
+          @media(max-width: $mainWidth) {
+            font-size: 20px !important;
+          }
+        }
       }
     }
   }
 
   .carrier {
     margin-top: 70px;
+
+    .title {
+      background: $mainColor;
+      display: inline-block;
+      color: white;
+      padding: 3px 6px;
+      margin-bottom: 20px;
+    }
+
+
+  }
+
+  .modules {
+    margin-top: 50px;
 
     .title {
       background: $mainColor;

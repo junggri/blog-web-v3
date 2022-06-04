@@ -25,6 +25,10 @@ export type DashBoardInput = {
   frequency: DashBoardFrequency;
 };
 
+export type GetPostInput = {
+  postId: Scalars['Float'];
+};
+
 export type Google = {
   __typename?: 'Google';
   createdAt: Scalars['DateTime'];
@@ -176,7 +180,7 @@ export type QueryGetPaginationPostArgs = {
 
 
 export type QueryGetPostArgs = {
-  data: Scalars['Float'];
+  data: GetPostInput;
 };
 
 

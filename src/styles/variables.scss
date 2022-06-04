@@ -63,7 +63,15 @@ $mainColor: #0F3AD1;
   }
 }
 
+$mainWidth: 700px;
+$phoneWidth: 500px;
+
 @mixin container {
   width: 700px;
   margin: 0 auto;
+  @media(max-width: $mainWidth) {
+    width: 100%;
+    padding: 0 10px;
+
+  }
 }

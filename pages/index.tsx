@@ -7,12 +7,14 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {HitActions} from "~/reducer/hit";
 import {RootState} from "~/reducer";
+import IndexLink from "~/component/IndexLink/IndexLink";
+import CarrierLink from '~/component/CarrierLink/carrierLink';
 
 const Home: NextPage = () => {
   const geoLocation = process.env.NODE_ENV === "production" ? useGeoLocation() : null;
   const dispatch = useDispatch()
   const state = useSelector((state: RootState) => state.hit);
-  
+
 
   useEffect(() => {
     dispatch(HitActions.GET_HIT())
@@ -35,32 +37,35 @@ const Home: NextPage = () => {
       <div className={styles.linkBox}>
         <Texts className={styles.title} size={20} type={"B"}>여기도 한번 가보세요!</Texts>
         <div className={styles.links}>
-          <a href="https://junggri.notion.site/1fed7f6beaac4b5b86eaf7dbc9771e29" target={"_blank"}>
-            <Texts className={styles.link} size={24} type={"NeoB"}>
-              커리어
-              <span className={styles.detail}>저의 노션페이지에요.</span>
-            </Texts>
-          </a>
-          <a href="https://www.youtube.com/channel/UCYMk5JNU9mzsaP-ZhhgXpgg/playlists" target={"_blank"}>
-            <Texts className={styles.link} size={24} type={"NeoB"}>
-              유튜브
-              <span className={styles.detail}>저의 라이브스트리밍 페이지에요.</span>
-            </Texts>
-          </a>
-          <a href="https://brunch.co.kr/@0ab6a1f3d75e468" target={"_blank"}>
-            <Texts className={styles.link} size={24} type={"NeoB"}>
-              브런치
-              <span className={styles.detail}>저의 일기장이에요.</span>
-            </Texts>
-          </a>
+          <IndexLink
+            href={'https://juenggri.notion.site/1fed7f6beaac4b5b86eaf7dbc9771e29'}
+            title={"노션"}
+            desc={"저의 노션 페이지에요."}
+          />
+          <IndexLink
+            href={'https://www.youtube.com/channel/UCYMk5JNU9mzsaP-ZhhgXpgg/playlists'}
+            title={"유튜브"}
+            desc={"저의 라이브스트리밍 페이지에요."}
+          />
+          <IndexLink
+            href={'https://www.youtube.com/watch?v=j09r0YQc2Qk&list=PLwaHjBUqDBdvpc7ly7DfKlwT0FejxqGcY'}
+            title={"강의"}
+            desc={"저의 강의 페이지에요."}
+          />
         </div>
       </div>
       <div className={styles.carrier}>
-        <Texts className={styles.title} size={20} type={"B"}>이렇게 성장하고 있습니다</Texts>
-        <div className={styles.company}>
-          <span className={styles.name}>위에이알</span>
-          <span>2021.06.01 ~ 2022.04.08</span>
-        </div>
+        <Texts className={styles.title} size={20} type={"B"}>이렇게 나아가고 있습니다.</Texts>
+        <CarrierLink
+          href={'https://we-ar.kr/'}
+          title={"위에이알"}
+          duration={"2021.06.01 - 2022.04.08"}
+        />
+        <CarrierLink
+          href={'https://www.supremainc.com/ko/'}
+          title={"슈프리마"}
+          duration={"2022.05.30 - NOW WORKING"}
+        />
       </div>
     </div>
   )

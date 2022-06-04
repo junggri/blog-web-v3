@@ -1,23 +1,23 @@
-import {Maybe, PageEdge, PageInfo, PaginatedPost, PaginationInput, Scalars} from "~/core/schema";
+import {PaginatedPost} from "~/core/schema";
 import createAsyncAction from "~/core/createAsyncAction";
+import {log} from "util";
 import {fetcher} from "~/lib/fetcher";
-import {GET_PAGINATED_POST} from "~/core/query";
+import {GET_LOG_POST, GET_PAGINATED_POST} from "~/core/query";
 import {handleActions} from "redux-actions";
 import reducerMap from "~/core/reducerMap";
 import produce from "immer";
-import {act} from "react-dom/test-utils";
 
-const postType = "@data/post"
+const logType = "@data/log"
 
-export interface PostInitialState {
+export interface LogInterface {
   data: null | PaginatedPost
   loading: boolean,
   error: boolean
 }
 
-export const PostAction = {
-  GET_PAGINATED_POST: createAsyncAction(postType, (first, after, filter, type = "post") => {
-    return fetcher.fetch().query(GET_PAGINATED_POST, {
+export const LogAction = {
+  GET_PAGINATED_LOG: createAsyncAction(logType, (first, after, filter, type = "log") => {
+    return fetcher.fetch().query(GET_LOG_POST, {
       data: {
         first: first,
         after: after,
@@ -25,22 +25,22 @@ export const PostAction = {
         type: type
       }
     })
-  }),
+  })
 }
 
-const initialValue: PostInitialState = {
+const initialValue: LogInterface = {
   data: null,
   loading: true,
   error: false
 }
 
-const reducer = handleActions<PostInitialState, { data: { getPaginationPost: PaginatedPost } }>({
-  ...reducerMap(postType, {
+const reducer = handleActions<LogInterface, { data: { getPaginationPost: PaginatedPost } }>({
+  ...reducerMap(logType, {
     onRequest: (state, action) => {
       return produce(state, draft => {
         draft.data = state.data
-        draft.error = false
         draft.loading = true
+        draft.error = false
       })
     },
     onSuccess: (state, action) => {
@@ -55,18 +55,16 @@ const reducer = handleActions<PostInitialState, { data: { getPaginationPost: Pag
           newData = action.payload.data.getPaginationPost.edges
         }
         draft.data.edges = newData
+
+        draft.loading = false;
         draft.error = false
-        draft.loading = false
       })
     },
     onFailure: (state, action) => {
       return produce(state, draft => {
-        draft.data = state.data
-        draft.error = true
-        draft.loading = false
       })
     }
-  })
-}, initialValue)
+  }),
+}, initialValue);
 
 export default reducer

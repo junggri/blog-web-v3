@@ -13,7 +13,7 @@ const LogItem: FC<Props> = memo(({data}) => {
   return (
     <div className={styles.logItem}>
       <Texts size={22} type={"NeoB"} className={styles.title}>
-        {data.title}
+        {data.id} {data.title}
       </Texts>
       <Texts className={styles.content}>
         {data.content}
